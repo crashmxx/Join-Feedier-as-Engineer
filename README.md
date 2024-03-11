@@ -1,8 +1,7 @@
-<p align="center"><a href="https://feedier.com" target="_blank"><img src="https://feedier.com/wp-content/uploads/2022/06/LOGO_BLACK.png" width="400" alt="Feedier"></a></p>
+<p align="center"><a href="https://feedier.com" target="_blank"><img src="https://dashboard.feedier.com/images/global/logo.svg" width="400" alt="Feedier"></a></p>
 
 
 ## Thanks for applying!
-
 One of the key stages of our recruitment process is the technical test. All developers on our team go through this stage in order to be able to join Feedier.
 
 The purpose of this test is mainly to see your adaptability and your comfort on our technical stack.
@@ -10,7 +9,6 @@ The purpose of this test is mainly to see your adaptability and your comfort on 
 This site uses the same technical stack as Feedier: VueJS, InertiaJS, Laravel and TailwindCSS. More commonly called **VILT Stack**.
 
 ## How to initialize the project ?
-
 The project run under Docker, you can easily setup all the projects by running these commands:
 
 #### 1. Copy the .env file
@@ -74,11 +72,9 @@ This test should be done using the VIL**T** Stack (including TailwindCSS special
 
 
 ## Submit your test
-
-Fork this project and publish it as **unvisible** on GitHub, then send us the link by email.
+This repository is a template, you can easily use it and create your repository from it and then send us the link by email.
 
 ## What's next ?
-
 Once we receive your test, we will give you an answer within 2 days maximum and you will be attended to a technical meeting with our Head of Engineering, Alexis Riot.
 
 ## Thanks a lot !
