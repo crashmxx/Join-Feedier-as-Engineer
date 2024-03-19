@@ -59,6 +59,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    public function hasRole($role)
+    {
+        return $this->role === $role;
+    }
+
     public function feedbacks()
     {
         return $this->hasMany(Feedback::class);

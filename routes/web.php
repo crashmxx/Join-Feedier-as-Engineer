@@ -16,3 +16,11 @@ use Inertia\Inertia;
 */
 
 Route::get('/', \App\Http\Controllers\IndexController::class)->name('index');
+// --------
+// Authenticated (staff only)
+// --------
+Route::middleware('staff')->group(function () {
+    Route::get('/feedbacks', [\App\Http\Controllers\FeedbackController::class, 'index'])->name('feedbacks.index');
+    Route::delete('/feedbacks/{feedback}', [\App\Http\Controllers\FeedbackController::class, 'destroy'])->name('feedbacks.destroy');
+    Route::patch('feedbacks/{feedback}/restore', [\App\Http\Controllers\FeedbackController::class, 'restore'])->name('feedbacks.restore');
+});
