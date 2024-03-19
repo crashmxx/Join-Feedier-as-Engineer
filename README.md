@@ -26,12 +26,17 @@ docker run --rm \
   composer install --ignore-platform-reqs
 ```
 
-#### 3. Run the migrations
+#### 3. Run Laravel Sail
+```shell
+./vendor/bin/sail up -d
+```
+
+#### 4. Run the migrations
 ```shell
 ./vendor/bin/sail artisan migrate
 ```
 
-#### 4. Install and build the frontend
+#### 5. Install and build the frontend
 ```shell
 ./vendor/bin/sail npm install
 ./vendor/bin/sail npm run dev
