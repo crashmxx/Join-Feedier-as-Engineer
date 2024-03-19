@@ -16,6 +16,13 @@ use Inertia\Inertia;
 */
 
 Route::get('/', \App\Http\Controllers\IndexController::class)->name('index');
+Route::get('/feedbacks/create', [\App\Http\Controllers\FeedbackController::class, 'create'])->name('feedbacks.create');
+// --------
+// One request per hour by IP address
+// --------
+Route::middleware('throttle:50,60')->group(function () {
+    Route::post('/feedback', [\App\Http\Controllers\FeedbackController::class, 'store'])->name('feedbacks.store');
+});
 // --------
 // Authenticated (staff only)
 // --------

@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { Head, Link, router } from '@inertiajs/vue3';
+import { Head, Link, router, usePage } from '@inertiajs/vue3';
 import Banner from '@/Components/Banner.vue';
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
@@ -8,10 +8,10 @@ import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import ApplicationLogo from "@/Components/ApplicationLogo.vue";
 
-defineProps({
+const props = defineProps({
     title: String,
 });
-
+const page = usePage();
 const showingNavigationDropdown = ref(false);
 
 const switchToTeam = (team) => {
@@ -50,6 +50,12 @@ const logout = () => {
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('index')" :active="route().current('index')">
                                     Dashboard
+                                </NavLink>
+                                <NavLink v-if="page.props.can['feedbacks.index']" :href="route('feedbacks.index')" :active="route().current('feedbacks.index')">
+                                    Feedback List
+                                </NavLink>
+                                <NavLink :href="route('feedbacks.create')" :active="route().current('feedbacks.create')">
+                                    Report a feedback
                                 </NavLink>
                             </div>
                         </div>
