@@ -1,6 +1,7 @@
 <script setup>
 import { useForm } from '@inertiajs/vue3';
 
+import ActionMessage from '@/Components/ActionMessage.vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
 import TextInput from '@/Components/TextInput.vue';
 import InputError from "@/Components/InputError.vue";
@@ -20,11 +21,6 @@ const submit = () => {
         onSuccess: () => {
             form.description = '';
             form.email = '';
-        },
-        onError: (errors) => {
-            if (errors.feedback_limit) {
-                form.feedbackLimitError = errors.feedback_limit;
-            }
         }
     });
 };
@@ -72,7 +68,7 @@ const submit = () => {
                                         Confirm
                                     </PrimaryButton>
                                 </div>
-                                <ActionMessage v-if="form.recentlySuccessful" class="ml-3 text-green-500">
+                                <ActionMessage :on="form.recentlySuccessful" class="ml-3 text-green-500">
                                     Your feedback has been taken into account.
                                 </ActionMessage>
                             </form>
