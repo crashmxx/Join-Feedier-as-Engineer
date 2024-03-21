@@ -20,7 +20,7 @@ Route::get('/feedbacks/create', [\App\Http\Controllers\FeedbackController::class
 // --------
 // One request per hour by IP address
 // --------
-Route::middleware('throttle:50,60')->group(function () {
+Route::middleware('throttle:1,60')->group(function () {
     Route::post('/feedback', [\App\Http\Controllers\FeedbackController::class, 'store'])->name('feedbacks.store');
 });
 // --------
